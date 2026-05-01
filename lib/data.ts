@@ -1,132 +1,178 @@
 export const profile = {
-  name: "Santosh G",
-  title: "Software Engineer",
-  bio: "I build scalable systems and thoughtful software. Interested in distributed systems, developer tooling, and the intersection of engineering and product.",
+  name: "Santosh Gummidipundi",
+  short: "Santosh G.",
+  title: "Data Engineer — Healthcare & Biotech",
+  location: "San Francisco Bay Area",
   email: "santosh@santoshg.io",
   github: "https://github.com/santoshgdev",
-  linkedin: "https://linkedin.com/in/santoshgdev",
-  location: "San Francisco, CA",
+  linkedin: "https://www.linkedin.com/in/santosheg/",
+  scholar: "https://scholar.google.com/citations?user=bf7OX6AAAAAJ",
+  heroLine: "I build pipelines that move clinical and life-science data from messy reality into systems people can trust.",
+  bio: "Healthcare and biotech data engineer with 4+ years building production pipelines and 10+ years in life-sciences data — clinical trials, biostatistics, and ML infrastructure. Currently at Sprinter Health.",
 };
 
 export const experience = [
   {
-    company: "Company Name",
-    role: "Senior Software Engineer",
-    period: "2022 – Present",
-    description:
-      "Led platform engineering initiatives, built internal developer tooling, and drove architectural decisions across microservices.",
-    tags: ["Python", "Kubernetes", "GCP"],
+    period: "2026 — Present",
+    role: "Data Engineer",
+    company: "Sprinter Health",
+    location: "Menlo Park, CA",
+    description: "Building data infrastructure for in-home preventive care.",
+    tags: ["Python", "Spark", "AWS"],
   },
   {
-    company: "Previous Company",
-    role: "Software Engineer",
-    period: "2019 – 2022",
-    description:
-      "Designed and implemented data pipelines processing millions of events per day. Improved system reliability from 99.5% to 99.95% uptime.",
-    tags: ["Go", "Kafka", "PostgreSQL"],
+    period: "2022 — 2026",
+    role: "Data Engineer II",
+    company: "Verana Health",
+    location: "San Francisco, CA",
+    description: "Authored post-processing components and Airflow orchestration for LLM inference pipelines, integrating Databricks preprocessing with AWS Bedrock batch inference — the org's first production-ready LLM inference capability. Optimized a GPU-intensive SageMaker pipeline to a Spark UDF using spaCy, reducing cost 90%+. Migrated EKS pipelines to Databricks for a 50% processing-time reduction.",
+    tags: ["Databricks", "AWS Bedrock", "Airflow", "PySpark", "Delta Lake", "spaCy"],
   },
   {
-    company: "Earlier Company",
-    role: "Software Engineer",
-    period: "2017 – 2019",
-    description:
-      "Built full-stack features for a B2B SaaS product. Owned the billing and subscription system end-to-end.",
-    tags: ["TypeScript", "React", "Node.js"],
+    period: "2021 — 2022",
+    role: "Data Scientist / Data Engineer",
+    company: "Thermo Fisher Scientific",
+    location: "South San Francisco, CA",
+    description: "Designed event-driven ETL pipelines from multiple sources to AWS. Python and Java services with CI/CD to serverless. Root-cause analysis using statistical tools, results presented to cross-functional teams.",
+    tags: ["Python", "Java", "AWS", "ETL", "R"],
+  },
+  {
+    period: "2018 — 2021",
+    role: "Biostatistician / Data Scientist",
+    company: "Stanford University — QSU, School of Medicine",
+    location: "Palo Alto, CA",
+    description: "Biostatistics and informatics on the Apple Heart Study (n > 400,000). Built end-to-end demographics + retention ETL on GCP serving an R Shiny dashboard. Trained BERT and LSTM models in PyTorch for clinical-note classification.",
+    tags: ["BERT", "PyTorch", "GCP", "R", "Shiny"],
+  },
+  {
+    period: "2018 — 2021",
+    role: "Clinical Research Data Analyst II",
+    company: "Department of Veterans Affairs — PAVIR",
+    location: "Palo Alto, CA",
+    description: "Statistical models and hypothesis testing on the VA Corporate Data Warehouse for manuscript submissions.",
+    tags: ["R", "Statistics"],
+  },
+  {
+    period: "2015 — 2018",
+    role: "Quantitative Research Analyst I",
+    company: "Sutter Health — PAMF",
+    location: "Palo Alto, CA",
+    description: "Healthcare-disparity research across 17 racial/ethnic groups and 50 metrics on the full PAMF adult EMR population, using GLMs in SAS.",
+    tags: ["SAS", "Healthcare", "GLMs"],
   },
 ];
 
-export const projects = [
+export type Project = {
+  name: string;
+  kind: "work" | "consulting" | "research" | "open-source" | "civic";
+  status: "on-going" | "shipped" | "archived";
+  period: string;
+  role: string;
+  summary: string;
+  highlights: string[];
+  stack: string[];
+  links: { label: string; href: string }[];
+  diagramId?: string;
+};
+
+export const projects: Project[] = [
   {
-    name: "Project Alpha",
-    description:
-      "An open-source CLI tool for managing environment configurations across multiple cloud providers.",
-    tags: ["Go", "CLI", "Cloud"],
-    github: "https://github.com/santoshgdev/project-alpha",
-    live: "",
+    name: "symbol-screen",
+    kind: "work",
+    status: "on-going",
+    period: "2025 — present",
+    role: "Solo build",
+    summary: "A screening tool for symbol-level patterns in financial markets. Private project.",
+    highlights: [
+      "Designing the ingestion + scoring pipeline end-to-end.",
+      "Evaluating Polars vs DuckDB for the analytics layer.",
+    ],
+    stack: ["Python", "DuckDB"],
+    links: [],
   },
   {
-    name: "Project Beta",
-    description:
-      "A real-time data visualization dashboard for monitoring distributed system metrics.",
-    tags: ["TypeScript", "React", "WebSockets"],
-    github: "https://github.com/santoshgdev/project-beta",
-    live: "",
+    name: "Marketing-law data infrastructure",
+    kind: "consulting",
+    status: "on-going",
+    period: "2026 — present",
+    role: "Advisor",
+    summary: "Embedded with a marketing law firm to design their data infrastructure — intake, matter management, and reporting. Details to follow.",
+    highlights: [
+      "Auditing current data flows.",
+      "Scoping a warehouse + dashboarding plan.",
+    ],
+    stack: ["Strategy", "Data warehousing"],
+    links: [],
+  },
+];
+
+export const publications = [
+  {
+    year: "2020",
+    venue: "JAMA Cardiology",
+    title: "Rhythm classification from a large remote, prospective cohort",
+    authors: "Apple Heart Study Investigators incl. S. Gummidipundi",
+    href: "https://scholar.google.com/citations?user=bf7OX6AAAAAJ",
   },
   {
-    name: "Project Gamma",
-    description:
-      "Lightweight job scheduler with pluggable backends — supports Redis, Postgres, and in-memory queues.",
-    tags: ["Python", "Redis", "PostgreSQL"],
-    github: "https://github.com/santoshgdev/project-gamma",
-    live: "",
+    year: "2019",
+    venue: "NEJM",
+    title: "Large-Scale Assessment of a Smartwatch to Identify Atrial Fibrillation",
+    authors: "Perez M.V. et al.",
+    href: "https://www.nejm.org/doi/full/10.1056/NEJMoa1901183",
   },
+];
+
+export const now = [
+  "Ramping at Sprinter Health.",
+  "Building symbol-screen on the side.",
+  "Advising a marketing law firm on data infrastructure.",
+  "Re-reading Designing Data-Intensive Applications.",
 ];
 
 export const skills = [
-  { category: "Languages", items: ["Python", "Go", "TypeScript", "SQL"] },
-  { category: "Infrastructure", items: ["Kubernetes", "Terraform", "GCP", "AWS"] },
-  { category: "Data", items: ["Kafka", "PostgreSQL", "BigQuery", "dbt"] },
-  { category: "Frontend", items: ["React", "Next.js", "Tailwind CSS"] },
+  { category: "Programming", items: ["Python", "R", "SQL", "Shell"] },
+  { category: "Data / Frameworks", items: ["Spark", "Airflow", "Delta Lake", "Terraform", "Kubernetes", "Docker"] },
+  { category: "Cloud", items: ["Databricks", "AWS Bedrock", "AWS SageMaker", "GCP BigQuery", "GCP Cloud Run", "Azure"] },
+  { category: "ML / NLP", items: ["PyTorch", "spaCy", "BERT", "LSTMs"] },
 ];
 
+// SVG-based architecture diagram (no React Flow dependency)
 export type DiagramNode = {
   id: string;
-  position: { x: number; y: number };
-  data: { label: string; type: string; description?: string };
-  type?: string;
+  x: number;
+  y: number;
+  type: "external" | "database" | "service" | "queue" | "infra" | "client";
+  label: string;
+  desc: string;
 };
 
-export type DiagramEdge = {
+export type DiagramDef = {
   id: string;
-  source: string;
-  target: string;
-  label?: string;
-  animated?: boolean;
-};
-
-export type Diagram = {
-  id: string;
-  name: string;
+  title: string;
   description: string;
   nodes: DiagramNode[];
-  edges: DiagramEdge[];
+  edges: [string, string][];
 };
 
-export const diagrams: Diagram[] = [
+export const diagrams: DiagramDef[] = [
   {
-    id: "krw-platform",
-    name: "KRW Platform",
-    description: "Cloud-native ETL pipeline on Azure — ingests legal case and call data from LawRuler and Zoom Phone into a medallion data warehouse.",
+    id: "verana-llm",
+    title: "Verana Health — LLM inference pipeline",
+    description: "Production LLM inference: Databricks preprocessing → AWS Bedrock batch inference, orchestrated by Airflow.",
     nodes: [
-      { id: "airflow",    position: { x: 400, y: 0   }, data: { label: "Apache Airflow",          type: "client",   description: "Orchestrates LawRuler & Zoom pipelines via DAGs" } },
-      { id: "caj",        position: { x: 400, y: 120 }, data: { label: "Container App Jobs",       type: "infra",    description: "Azure-managed compute for ETL job execution" } },
-      { id: "handler",    position: { x: 400, y: 240 }, data: { label: "TaskHandler",              type: "service",  description: "Python CLI entry point (Fire) orchestrating ETL stages" } },
-      { id: "lr-svc",     position: { x: 160, y: 360 }, data: { label: "LawRuler Ingestion",       type: "service",  description: "ROPC OAuth client — fetches case summaries & inbox items" } },
-      { id: "zoom-svc",   position: { x: 640, y: 360 }, data: { label: "Zoom Phone Ingestion",     type: "service",  description: "S2S OAuth client — fetches call history & queue metrics" } },
-      { id: "lr-api",     position: { x: 0,   y: 500 }, data: { label: "LawRuler API",             type: "external", description: "auth.lawruler.com / apim.lawruler.com" } },
-      { id: "zoom-api",   position: { x: 800, y: 500 }, data: { label: "Zoom Phone API",           type: "external", description: "api.zoom.us/v2 — paginated call data" } },
-      { id: "blob-raw",   position: { x: 160, y: 500 }, data: { label: "Blob Storage (Raw)",       type: "database", description: "JSON pages + manifests: lawruler-raw, zoom-raw" } },
-      { id: "blob-stg",   position: { x: 640, y: 500 }, data: { label: "Blob Storage (Staging)",   type: "database", description: "Parquet chunks: lawruler-staging, zoom-staging" } },
-      { id: "keyvault",   position: { x: 160, y: 640 }, data: { label: "Azure Key Vault",          type: "infra",    description: "API credentials — injected via Managed Identity" } },
-      { id: "sql",        position: { x: 400, y: 640 }, data: { label: "Azure SQL Database",       type: "database", description: "staging + bronze schemas for LawRuler & Zoom" } },
-      { id: "logs",       position: { x: 640, y: 640 }, data: { label: "Log Analytics",            type: "infra",    description: "Execution logs & query tracing (30-day retention)" } },
-      { id: "bi",         position: { x: 400, y: 780 }, data: { label: "ThoughtSpot BI",           type: "external", description: "Read-only Entra ID access to bronze layer" } },
+      { id: "src",     x: 60,  y: 40,  type: "external", label: "Clinical sources", desc: "EHR exports" },
+      { id: "raw",     x: 60,  y: 170, type: "database", label: "Raw lake",         desc: "S3 / Delta" },
+      { id: "prep",    x: 290, y: 170, type: "service",  label: "Databricks prep",  desc: "PySpark UDF (spaCy)" },
+      { id: "queue",   x: 520, y: 170, type: "queue",    label: "Bedrock queue",    desc: "Batch jobs" },
+      { id: "infer",   x: 520, y: 40,  type: "service",  label: "AWS Bedrock",      desc: "LLM inference" },
+      { id: "post",    x: 520, y: 300, type: "service",  label: "Post-processing",  desc: "Validation + tagging" },
+      { id: "out",     x: 290, y: 300, type: "database", label: "Curated marts",    desc: "Delta tables" },
+      { id: "airflow", x: 60,  y: 300, type: "infra",    label: "Airflow",          desc: "Orchestration" },
     ],
     edges: [
-      { id: "e1",  source: "airflow",  target: "caj",       animated: true,  label: "triggers" },
-      { id: "e2",  source: "caj",      target: "handler",   animated: true,  label: "executes" },
-      { id: "e3",  source: "handler",  target: "lr-svc" },
-      { id: "e4",  source: "handler",  target: "zoom-svc" },
-      { id: "e5",  source: "lr-svc",   target: "lr-api",    animated: true },
-      { id: "e6",  source: "zoom-svc", target: "zoom-api",  animated: true },
-      { id: "e7",  source: "lr-svc",   target: "blob-raw",  label: "write JSON" },
-      { id: "e8",  source: "zoom-svc", target: "blob-raw",  label: "write JSON" },
-      { id: "e9",  source: "blob-raw", target: "blob-stg",  label: "normalize → Parquet" },
-      { id: "e10", source: "blob-stg", target: "sql",       label: "BULK INSERT" },
-      { id: "e11", source: "keyvault", target: "lr-svc",    label: "secrets" },
-      { id: "e12", source: "keyvault", target: "zoom-svc",  label: "secrets" },
-      { id: "e13", source: "caj",      target: "logs" },
-      { id: "e14", source: "sql",      target: "bi",        label: "read-only" },
+      ["src", "raw"], ["raw", "prep"], ["prep", "queue"], ["queue", "infer"],
+      ["infer", "post"], ["post", "out"], ["airflow", "out"], ["airflow", "prep"],
     ],
   },
 ];
